@@ -1,0 +1,60 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#back-button .toolbarbutton-icon,
+#forward-button .toolbarbutton-icon,
+#reload-button .toolbarbutton-icon,
+#stop-button .toolbarbutton-icon,
+#new-tab-button .toolbarbutton-icon,
+#nav-bar-overflow-button .toolbarbutton-icon,
+#PanelUI-menu-button .toolbarbutton-icon {
+    filter: var(--gnome-icons-hack-filter);
+}
+#bookmarks-menu-button .toolbarbutton-icon {
+    filter: brightness(0%) var(--gnome-icons-hack-filter);
+}
+#nav-bar:-moz-window-inactive #back-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #forward-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #reload-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #stop-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #new-tab-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #nav-bar-overflow-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #PanelUI-menu-button .toolbarbutton-icon {
+    filter: var(--gnome-inactive-icons-hack-filter);
+}
+#nav-bar:-moz-window-inactive #bookmarks-menu-button .toolbarbutton-icon {
+    filter: brightness(0%) var(--gnome-inactive-icons-hack-filter);
+}
+#back-button .toolbarbutton-icon { list-style-image: url("moz-icon://stock/go-previous-symbolic?size=menu") !important; }
+#forward-button .toolbarbutton-icon { list-style-image: url("moz-icon://stock/go-next-symbolic?size=menu") !important; }
+/* Needs browser.stopReloadAnimation.enabled;false */
+#reload-button { list-style-image: url("moz-icon://stock/view-refresh-symbolic?size=menu") !important; }
+#stop-button { list-style-image: url("moz-icon://stock/process-stop-symbolic?size=menu") !important; }
+#new-tab-button { list-style-image: url("moz-icon://stock/tab-new-symbolic?size=menu") !important; }
+#bookmarks-menu-button { list-style-image: url("ephy-bookmarks-symbolic.svg") !important; }
+#nav-bar-overflow-button { list-style-image: url("moz-icon://stock/view-more-symbolic?size=menu") !important; }
+#PanelUI-menu-button { list-style-image: url("moz-icon://stock/open-menu-symbolic?size=menu") !important; }
+
+/* Disabled toolbar icon opacity fixes */
+#nav-bar toolbarbutton.chromeclass-toolbar-additional[disabled] image,
+#nav-bar toolbarbutton.toolbarbutton-combined[disabled] image,
+#nav-bar #reload-button[disabled] image,
+#nav-bar #stop-button[disabled] image,
+#PanelUI-menu-button[disabled] image {
+    opacity: .5 !important;
+}
+
+/* Inactive window toolbar icon opacity fixes */
+#nav-bar:-moz-window-inactive toolbarbutton.chromeclass-toolbar-additional image,
+#nav-bar:-moz-window-inactive toolbarbutton.toolbarbutton-combined image,
+#nav-bar:-moz-window-inactive #reload-button image,
+#nav-bar:-moz-window-inactive #stop-button image,
+#PanelUI-menu-button:-moz-window-inactive image {
+    opacity: .4 !important;
+}
+#nav-bar:-moz-window-inactive toolbarbutton.chromeclass-toolbar-additional[disabled] image,
+#nav-bar:-moz-window-inactive toolbarbutton.toolbarbutton-combined[disabled] image,
+#nav-bar:-moz-window-inactive #reload-button[disabled] image,
+#nav-bar:-moz-window-inactive #stop-button[disabled] image,
+#PanelUI-menu-button[disabled]:-moz-window-inactive image {
+    opacity: .2 !important;
+}

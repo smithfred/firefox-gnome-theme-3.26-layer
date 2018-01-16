@@ -1,0 +1,76 @@
+/*
+ * In this file you can enable styles which apply to Firefox' user interface.
+ * To enable a specific feature, uncomment its @import line by removing "/*" at
+ * the beginning of the line. To disable it, put the "/*" back.
+ */
+
+/*******************************************************************************
+ * GNOME Theme
+ * Pick whichever variant you like. Remember that your GTK theme
+ * variant must match the variant you pick here, eg. if you pick the dark
+ * variant, you must also run Firefox using the dark variant by either
+ * setting the theme to Adwaita-dark in GNOME Tweaks or running Firefox
+ * explicitly with the dark theme:
+ *   $ GTK_THEME=Adwaita:dark firefox
+ * The opposite applies to the light variant, you must either set your theme to
+ * Adwaita, or run Firefox like this:
+ *   $ GTK_THEME=Adwaita:light firefox
+ */
+
+/* GNOME 3.26 light theme */
+@import "ui/gnome-3.26-light.css"; /**/
+/* GNOME 3.26 dark theme */
+/* NOTE: change scrollbar theme further down to scrollbars-dark.css as well. */
+/*@import "ui/gnome-3.26-dark.css"; /**/
+
+/*******************************************************************************
+/* Client-side decorations (optional)
+ * This feature is currently only available on Firefox Nightly (59) and Firefox
+ * 57 on Fedora, which includes a CSD patch.
+ * If using Nightly, you can enable Firefox's CSD support in the app menu
+ * → Customize... → uncheck "Title Bar" at the bottom of the window.
+ * If using Firefox 57 on Fedora, it is instead enabled via a key in
+ * about:config — widget.allow-client-side-decoration.
+ */
+
+/* Enable CSD for Firefox 59 */
+/*@import "ui/csd.css"; /**/
+/* Enable CSD for Firefox 57 (Fedora only) */
+@import "ui/fedora-csd.css"; /**/
+
+/* Window controls: just 1 button */
+@import "../firefox-gnome-theme/ui/csd-1-button.css"; /**/
+/* Window controls: 2 buttons */
+/*@import "../firefox-gnome-theme/ui/csd-2-buttons.css"; /**/
+/* Window controls: 3 buttons */
+/*@import "../firefox-gnome-theme/ui/csd-3-buttons.css"; /**/
+
+/*******************************************************************************
+ * Other features (optional)
+ */
+
+/* Make all tab icons look kinda like symbolic icons */
+/*@import "ui/symbolic-tab-icons.css"; /**/
+
+/* Match autocomplete dropdown width to URL bar width */
+@import "ui/matching-autocomplete-width.css"; /**/
+
+/* Match GTK auto-hiding scrollbars
+ * This relies on a JS binding hack to attach a stylesheet via JS as an
+ * "agent sheet" to style scrollbars, which are "anonymous content".
+ * NOTE: minor issue: scrollbars zoom as well if using page zoom. */
+/* Light theme */
+@import "ui/scrollbars-light.css"; /**/
+/* Dark theme */
+/*@import "ui/scrollbars-dark.css"; /**/
+
+/* Use (more) stock icons */
+/* NOTE: set browser.stopReloadAnimation.enabled to false in about:config */
+@import "ui/stock-icons.css"; /**/
+
+/* Hide tab bar when only one tab open */
+/* NOTE: move the "new tab" button to the nav. bar first! */
+@import "ui/hide-single-tab.css"; /**/
+
+/* Use white background for new tabs */
+@import "ui/white-tabcontent.css"; /**/

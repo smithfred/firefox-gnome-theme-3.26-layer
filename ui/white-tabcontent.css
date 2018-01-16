@@ -1,0 +1,7 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* New window uses "before load" colour if "about:blank"; new tab briefly */
+/* Needs matching userContent to set new tab page background/content */
+tabbrowser tabpanels {
+    background-color: #fff !important;
+}

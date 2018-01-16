@@ -1,0 +1,27 @@
+@import "../../firefox-gnome-theme/ui/fedora-csd.css";
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Undo theme.css rule to fix headerbar top border growing on tab drag
+   FIXME: rule should be for SSD only in theme.css */
+#TabsToolbar[movingtab] + #nav-bar {
+    margin-top: -4px !important;
+}
+
+/* Reduce padding before window controls */
+#nav-bar {
+    padding-right: 4px !important;
+}
+
+/* Window controls separator height */
+#nav-bar::after {
+    height: 34px;
+}
+
+/* Don't hardcode filters */
+#titlebar toolbarbutton image {
+    filter: var(--gnome-icons-hack-filter);
+}
+/* Same opacity for dark and light inactive button */
+#titlebar:-moz-window-inactive toolbarbutton image {
+    opacity: .5 !important;
+}

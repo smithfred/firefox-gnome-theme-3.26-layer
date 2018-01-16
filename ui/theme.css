@@ -1,0 +1,164 @@
+@import "../../firefox-gnome-theme/ui/theme.css";
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*** URL bar ***/
+/* URL bar radius needs !important */
+#urlbar {
+    border-radius: 3px !important;
+}
+/* Colour focused border */
+#urlbar[focused] {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: var(--gnome-focused-urlbar-border-color) !important;
+    outline: var(--gnome-focused-urlbar-outline);
+    outline-offset: -2px;
+    -moz-outline-radius: 3px;
+}
+/* Compensate on child for extra focused URL bar border */
+#urlbar[focused] .urlbar-textbox-container {
+    margin: -1px !important;
+}
+/* Greater min-width for URL bar */
+#urlbar-container {
+    max-width: calc(129ch + 24px + 2 * var(--toolbarbutton-inner-padding)) !important;
+}
+/* Make one flexible space on each side occupy all space to centre URL bar. */
+toolbarspring {
+    max-width: 10000px !important;
+}
+
+/*** Header bar buttons ***/
+#nav-bar toolbarbutton.chromeclass-toolbar-additional[disabled],
+#nav-bar toolbarbutton.toolbarbutton-combined[disabled],
+#nav-bar #reload-button[disabled],
+#nav-bar #stop-button[disabled],
+#PanelUI-menu-button[disabled] {
+    border: var(--gnome-headerbar-button-disabled-border) !important;
+}
+:root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
+    background-color: var(--gnome-tabbar-tab-hover-bgcolor) !important;
+}
+:root:not(:-moz-window-inactive) .tab-close-button:hover {
+    background-image: var(--gnome-tab-close-button-hover-bgimage);
+}
+#PanelUI-menu-button[disabled]:-moz-window-inactive {
+    border: var(--gnome-inactive-headerbar-button-disabled-border);
+}
+/* Remove extra pixel width for non-compact back button */
+:root:not([uidensity="compact"]) #back-button {
+    width: 33px;
+}
+/* No drop shadow on inactive window toolbar icons */
+/* Commented-out icons are not used in original theme.css */
+/*#nav-bar:-moz-window-inactive #reload-button .toolbarbutton-icon, /**/
+/*#nav-bar:-moz-window-inactive #stop-button .toolbarbutton-icon, /**/
+/*#nav-bar:-moz-window-inactive #new-tab-button .toolbarbutton-icon, /**/
+/* #nav-bar:-moz-window-inactive #zoom-reset-button .toolbarbutton-icon, /**/
+/* #nav-bar:-moz-window-inactive #nav-bar-overflow-button .toolbarbutton-icon, /**/
+/* #nav-bar:-moz-window-inactive #downloads-button, /**/
+/* #nav-bar:-moz-window-inactive #PanelUI-menu-button, /**/
+#nav-bar:-moz-window-inactive #back-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #forward-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #zoom-out-button .toolbarbutton-icon,
+#nav-bar:-moz-window-inactive #zoom-in-button .toolbarbutton-icon {
+    filter: var(--gnome-inactive-icons-hack-filter);
+}
+
+/*** Tab bar ***/
+/* Extra margin for first/last tabs */
+.tabbrowser-tab[first-tab]:not([pinned=true]) {
+    margin-left: 8px !important;
+}
+.tabbrowser-tab[last-tab]:not([pinned=true]) {
+    margin-right: 8px !important;
+}
+/* Tab bar height */
+#tabbrowser-tabs, tab > stack {
+    height: 37px;
+}
+/* Tab close button etc. positioning */
+.tab-throbber, .tab-icon-image, .tab-sharing-icon-overlay, .tab-icon-sound, .tab-close-button {
+    margin-top: 0 !important;
+}
+/* Shift tab contents up 1px */
+.tab-content {
+    margin-top: -1px;
+}
+/* Kill tab hover top border
+   There's a rule in the original theme.css, but doesn't work for inactive hover */
+.tabbrowser-tab .tab-line {
+    display: none;
+}
+/* Fix tab close button variable naming; move filters to icon */
+.tab-close-button > .toolbarbutton-icon {
+    filter: var(--gnome-tab-close-icon-filter);
+}
+:root:not(:-moz-window-inactive) .tab-close-button:hover > .toolbarbutton-icon {
+    filter: var(--gnome-tab-close-icon-hover-filter);
+}
+:root:not(:-moz-window-inactive) .tab-close-button:hover > .toolbarbutton-icon {
+    filter: var(--gnome-tab-close-icon-active-filter);
+}
+.tab-close-button {
+    filter: none;
+}
+:root:not(:-moz-window-inactive) .tab-close-button:hover {
+    border: var(--gnome-tab-close-button-hover-border);
+    border-bottom: var(--gnome-tab-close-button-hover-border-bottom);
+    filter: none;
+}
+/* Undo non-specific styling (see below) */
+.tab-close-button:active {
+    background-image: none;
+    box-shadow: none;
+}
+/* Insufficient specificity to override above active-window-only hover */
+:root:not(:-moz-window-inactive) .tab-close-button:active {
+    background-image: var(--gnome-tab-close-button-active-bgimage);
+    box-shadow: var(--gnome-tab-close-button-active-box-shadow);
+}
+/* Common light/dark tab close button settings */
+:root {
+    --gnome-tab-close-icon-filter: var(--gnome-inactive-icons-hack-filter);
+    --gnome-tab-close-icon-hover-filter: var(--gnome-icons-hack-filter);
+    --gnome-tab-close-icon-active-filter: var(--gnome-inactive-icons-hack-filter);
+    --gnome-tab-close-button-hover-border: var(--gnome-headerbar-button-border);
+    --gnome-tab-close-button-hover-border-bottom: var(--gnome-headerbar-button-border-bottom);
+    --gnome-tab-close-button-active-box-shadow: none;
+}
+
+/*** Arrow panels (speech bubble menus) ***/
+/* Round corners */
+.panel-arrowcontent {
+    border-radius: 5px;
+}
+/* Selectively pad menus depending on native padding */
+#appMenu-popup .panel-arrowcontent,
+#BMB_bookmarksPopup .panel-arrowcontent {
+    padding: 12px !important;
+}
+/* Hack to colourise arrow */
+.panel-arrow {
+    filter: var(--gnome-popover-arrow-filter);
+}
+:root {
+    --arrowpanel-background: -moz-default-background-color !important;
+}
+/* Toolbar popups, arrow should touch toolbar */
+#appMenu-popup, #downloadsPanel {
+    margin-top: 16px;
+}
+#BMB_bookmarksPopup {
+    margin-top: 7px !important;
+}
+#widget-overflow {
+    margin-top: 10px;
+}
+/* URL bar popups, arrow should sit inside URL bar */
+#identity-popup {
+    margin-top: 6px;
+}
+#pageActionPanel, #editBookmarkPanel {
+    /* Already OK */
+}

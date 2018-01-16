@@ -1,0 +1,10 @@
+@import "fedora-csd.css";
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#nav-bar toolbarbutton.chromeclass-toolbar-additional,
+#nav-bar toolbarbutton.toolbarbutton-combined,
+#nav-bar #reload-button,
+#nav-bar #stop-button,
+#PanelUI-menu-button {
+    margin: 6px 3px !important;
+}
