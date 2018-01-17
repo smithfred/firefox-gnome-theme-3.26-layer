@@ -24,26 +24,21 @@
 /*@import "ui/gnome-3.26-dark.css"; /**/
 
 /*******************************************************************************
-/* Client-side decorations (optional)
+/* Client-side decorations
  * This feature is currently only available on Firefox Nightly (59) and Firefox
  * 57 on Fedora, which includes a CSD patch.
  * If using Nightly, you can enable Firefox's CSD support in the app menu
  * → Customize... → uncheck "Title Bar" at the bottom of the window.
  * If using Firefox 57 on Fedora, it is instead enabled via a key in
  * about:config — widget.allow-client-side-decoration.
+ * CSD-availability is detected by -moz-gtk-csd-available; you don't need to
+ * disable it if you're not using the feature - just set the correct version.
  */
 
-/* Enable CSD for Firefox 59 */
-/*@import "ui/csd.css"; /**/
-/* Enable CSD for Firefox 57 (Fedora only) */
-@import "ui/fedora-csd.css"; /**/
-
-/* Window controls: just 1 button */
-@import "../firefox-gnome-theme/ui/csd-1-button.css"; /**/
-/* Window controls: 2 buttons */
-/*@import "../firefox-gnome-theme/ui/csd-2-buttons.css"; /**/
-/* Window controls: 3 buttons */
-/*@import "../firefox-gnome-theme/ui/csd-3-buttons.css"; /**/
+/* CSD for Firefox 59 */
+/*@import "ui/csd.css" (-moz-gtk-csd-available); /**/
+/* CSD for Firefox 57 (available on Fedora only) */
+@import "ui/fedora-csd.css" (-moz-gtk-csd-available); /**/
 
 /*******************************************************************************
  * Other features (optional)

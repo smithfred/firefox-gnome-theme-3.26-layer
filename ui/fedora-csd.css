@@ -25,3 +25,25 @@
 #titlebar:-moz-window-inactive toolbarbutton image {
     opacity: .5 !important;
 }
+
+/* Conditionally style based on number of window controls */
+/* Window controls: at least 1 button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+    #nav-bar {
+	    margin-right: 43px;
+    }
+}
+/* Window controls: at least 2 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+    #nav-bar {
+	    margin-right: 83px;
+    }
+}
+/* Window controls: 3 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+    #nav-bar {
+	    margin-right: 123px;
+    }
+}

@@ -14,6 +14,8 @@ improvements:
 * Use some additional stock icons.
 * Hide the tab bar when only one tab is open.
 * Use a white background for blank new tabs/windows.
+* CSD and number of window controls auto-detected (just need to select the
+  Firefox version).
 
 This add-on is designed to sit alongside `firefox-gnome-theme`, and add to/
 override it as necessary.
@@ -31,7 +33,7 @@ Prep.
 
         # for the dark theme
         GTK_THEME=Adwaita:dark firefox
-    
+
         # for the light one
         GTK_THEME=Adwaita:light firefox
 
