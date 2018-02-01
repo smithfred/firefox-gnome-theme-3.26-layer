@@ -35,10 +35,10 @@
  * disable it if you're not using the feature - just set the correct version.
  */
 
-/* CSD for Firefox 59 */
-/*@import "ui/csd.css" (-moz-gtk-csd-available); /**/
+/* CSD for Firefox 59 (or Fedora's FF58, which uses upstream's patches now) */
+@import "ui/csd.css" (-moz-gtk-csd-available); /**/
 /* CSD for Firefox 57 (available on Fedora only) */
-@import "ui/fedora-csd.css" (-moz-gtk-csd-available); /**/
+/*@import "ui/fedora-csd.css" (-moz-gtk-csd-available); /**/
 
 /*******************************************************************************
  * Other features (optional)
@@ -69,3 +69,8 @@
 
 /* Use white background for new tabs */
 @import "ui/white-tabcontent.css"; /**/
+
+/*******************************************************************************
+ * Firefox 58 fixes - disable this for Firefox 57
+ */
+@import "ui/firefox-58-fixes.css"; /**/

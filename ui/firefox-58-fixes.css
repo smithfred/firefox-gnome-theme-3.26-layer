@@ -1,0 +1,106 @@
+/* NOTE: use non-Fedora CSD */
+/* NOTE: CSD needs to be top/bottom margin-setting only */
+
+/* Needs !important for FF58 */
+#appMenu-popup, #downloadsPanel {
+    margin-top: 10px !important;
+}
+
+/* Appears with no tabs (too thick) and under, not behind tabs; already thin -moz-appearance border from TabsToolbar */
+
+/* Conditionally style based on number of window controls */
+/* Undo non-conditional CSD rules */
+#nav-bar {
+    margin-right: 0;
+}
+/* Window controls: at least 1 button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+    [tabsintitlebar]:root #nav-bar {
+	    margin-right: 43px;
+    }
+}
+/* Window controls: at least 2 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+    [tabsintitlebar]:root #nav-bar {
+	    margin-right: 83px;
+    }
+}
+/* Window controls: 3 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+    [tabsintitlebar]:root #nav-bar {
+	    margin-right: 123px;
+    }
+}
+
+#nav-bar::after {
+    display: none;
+}
+[tabsintitlebar]:root #nav-bar::after {
+    display: block;
+}
+
+
+/* tabsintitlebar for FF58+ - -moz-gtk-csd-available is always set so useless */
+#nav-bar toolbarbutton.chromeclass-toolbar-additional,
+#nav-bar toolbarbutton.toolbarbutton-combined,
+#nav-bar #reload-button,
+#nav-bar #stop-button,
+#PanelUI-menu-button {
+    margin: 4px 3px !important;
+}
+[tabsintitlebar]:root #nav-bar toolbarbutton.chromeclass-toolbar-additional,
+[tabsintitlebar]:root #nav-bar toolbarbutton.toolbarbutton-combined,
+[tabsintitlebar]:root #nav-bar #reload-button,
+[tabsintitlebar]:root #nav-bar #stop-button,
+[tabsintitlebar]:root #PanelUI-menu-button {
+    margin: 6px 3px !important;
+}
+/* Undo reduce padding before window controls */
+#nav-bar {
+    padding-right: 3px !important;
+}
+[tabsintitlebar]:root #nav-bar {
+    padding-right: 7px !important;
+}
+
+#nav-bar {
+	margin-top: initial !important;
+}
+[tabsintitlebar]:root #nav-bar {
+	margin-top: -4px !important;
+}
+
+#navigator-toolbox {
+	margin-top: initial;
+}
+[tabsintitlebar]:root #navigator-toolbox {
+	margin-top: -5px;
+}
+
+/* Remove new disabled opacity rule */
+.tabbrowser-arrowscrollbox > .scrollbutton-up[disabled="true"],
+.tabbrowser-arrowscrollbox > .scrollbutton-down[disabled="true"],
+:root:not([customizing]) .toolbarbutton-1[disabled="true"],
+#nav-bar-overflow-button[disabled="true"],
+#PanelUI-menu-button[disabled="true"] {
+	opacity: 1 !important;
+}
+
+/* Re-fix back button scaling */
+#back-button > .toolbarbutton-icon {
+	width: 32px !important;
+}
+
+/* Fix tab bar bottom border (remove -moz border; pull in #navbar border) */
+#TabsToolbar {
+    -moz-appearance: none !important;
+    margin-bottom: -1px !important;
+}
+
+/* Restore active tab L/R border style */
+.tab-background[selected=true] {
+	border-left-style: solid !important;
+	border-right-style: solid !important;
+}

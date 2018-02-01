@@ -31,18 +31,22 @@ Prep.
   you can run Firefox with a specific variant without changing the global theme
   by supplying the GTK_THEME variable like this:
 
-        # for the dark theme
-        GTK_THEME=Adwaita:dark firefox
+  ```sh
+  # For the dark theme
+  GTK_THEME=Adwaita:dark firefox
+  ```
 
-        # for the light one
-        GTK_THEME=Adwaita:light firefox
+  ```
+  # For the light theme
+  GTK_THEME=Adwaita:light firefox
+  ```
 
 * If using the <u>default</u> set of enabled features, you will need to:
-    * Move Firefox's "new tab" button to the nav. bar first (since it's hidden
-      when only one tab is open by the default-enabled "hide-single-tab.css".
-    * Set `browser.stopReloadAnimation.enabled` to `false` in about:config
-      (since the stop/reload buttons are replaced with the stock GNOME icons
-      by the default-enabled "stock-icons.css".
+  * Move Firefox's "new tab" button to the nav. bar first (since it's hidden
+    when only one tab is open by the default-enabled "hide-single-tab.css".
+  * Set `browser.stopReloadAnimation.enabled` to `false` in about:config (since
+    the stop/reload buttons are replaced with the stock GNOME icons by the
+    default-enabled "stock-icons.css".
 
 
 Installation
@@ -55,8 +59,10 @@ Installation
 * Clone the `firefox-gnome-theme` and `firefox-gnome-theme-3.26-addon` repos to
   their own subdirectories inside the `chrome` directory:
 
-    	git clone 'https://github.com/kurogetsusai/firefox-gnome-theme.git'
-    	git clone 'https://github.com/smithfred/firefox-gnome-theme-3.26-addon.git'
+  ```sh
+  git clone 'https://github.com/kurogetsusai/firefox-gnome-theme.git'
+  git clone 'https://github.com/smithfred/firefox-gnome-theme-3.26-addon.git'
+  ```
 
 * If you don't have `userChrome.css` and  `userContent.css` files, create them
   in the `chrome` directory. These can be used for any other arbitrary style
@@ -64,18 +70,24 @@ Installation
 
 * You will now have the following in the `chrome` directory:
 
-        firefox-gnome-theme/
-        firefox-gnome-theme-3.26-addon/
-        userChrome.css
-        userContent.css
+  ```
+  firefox-gnome-theme/
+  firefox-gnome-theme-3.26-addon/
+  userChrome.css
+  userContent.css
+  ```
 
 * At the **very** top of your `userChrome.css`, add:
 
-    `@import "firefox-gnome-theme-3.26-layer/userChrome.css";`
+  ```css
+  @import "firefox-gnome-theme-3.26-layer/userChrome.css";
+  ```
 
 * At the **very** top of your `userChrome.css`, add:
 
-    `@import "firefox-gnome-theme/userContent.css";`
+  ```css
+  @import "firefox-gnome-theme/userContent.css";
+  ```
 
 * Open `firefox-gnome-theme-3.26-addon/userChrome.css` with your favourite text
   editor and follow the instructions there to enable one of the theme variants.
