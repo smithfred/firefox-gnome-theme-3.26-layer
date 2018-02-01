@@ -1,12 +1,9 @@
 /* NOTE: use non-Fedora CSD */
-/* NOTE: CSD needs to be top/bottom margin-setting only */
 
 /* Needs !important for FF58 */
 #appMenu-popup, #downloadsPanel {
     margin-top: 10px !important;
 }
-
-/* Appears with no tabs (too thick) and under, not behind tabs; already thin -moz-appearance border from TabsToolbar */
 
 /* Conditionally style based on number of window controls */
 /* Undo non-conditional CSD rules */
