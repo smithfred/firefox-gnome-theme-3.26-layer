@@ -1,7 +1,7 @@
 /* NOTE: use non-Fedora CSD */
 
 /* Needs !important for FF58 */
-#appMenu-popup, #downloadsPanel {
+#appMenu-popup, #downloadsPanel, #widget-overflow {
     margin-top: 10px !important;
 }
 

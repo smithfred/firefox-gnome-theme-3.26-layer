@@ -1,0 +1,14 @@
+/* Fix tab close icon padding and opacity (no longer contains icon element) */
+:root {
+    --gnome-tab-close-icon-filter: opacity(0.25);
+}
+.tab-close-button {
+    filter: var(--gnome-tab-close-icon-filter);
+    padding: 3px;
+}
+
+/* Popover arrow now matches main popover colour without filtering */
+
+:root {
+    --gnome-popover-arrow-filter: none;
+}
