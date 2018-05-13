@@ -1,0 +1,15 @@
+/* Quick hacky fixes for missing close button and header bar brokenness */
+
+#titlebar {
+    margin-bottom: -37px !important;
+}
+
+#titlebar-buttonbox {
+    height: 51px !important;
+    padding-top: 3px !important;
+    margin-bottom: -1px !important;
+    padding-bottom: 0 !important;
+}
+#titlebar-close image {
+	list-style-image: url("moz-icon://stock/window-close-symbolic?size=menu") !important;
+}

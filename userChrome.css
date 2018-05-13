@@ -78,3 +78,7 @@
  * Firefox 59 fixes - disable this for Firefox 57/58
  */
 @import "ui/firefox-59-fixes.css"; /**/
+ /*
+ * Firefox 60 fixes - disable this for Firefox 57/58/59
+ */
+@import "ui/firefox-60-fixes.css"; /**/
