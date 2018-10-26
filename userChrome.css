@@ -55,7 +55,7 @@
  * "agent sheet" to style scrollbars, which are "anonymous content".
  * NOTE: minor issue: scrollbars zoom as well if using page zoom. */
 /* Light theme */
-@import "ui/scrollbars-light.css"; /**/
+/*@import "ui/scrollbars-light.css"; /**/
 /* Dark theme */
 /*@import "ui/scrollbars-dark.css"; /**/
 
